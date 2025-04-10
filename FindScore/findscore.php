@@ -1,5 +1,6 @@
 <?php
 
+    // Score array of 30 balls
     $scoreArray = [
         1,2,4,6,2,2,
         2,4,6,6,2,1,
@@ -20,10 +21,12 @@
             ? $batsman_A_score += $score
             : $batsman_B_score += $score;
 
+        // Check the scored run is odd if yes, then rotate the strike
         if ($score % 2 !== 0) {
             [$striker, $nonStriker] = [$nonStriker, $striker];
         }
-
+        
+        // Check the over is completed if yes, then rotate the strike
         if (($ball) % 6 === 0) {
             [$striker, $nonStriker] = [$nonStriker, $striker];
         }
